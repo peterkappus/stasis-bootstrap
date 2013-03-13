@@ -1,0 +1,15 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      a.btn.btn-navbar data-toggle="collapse" data-target=".nav-collapse" 
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.brand class="#{(@current == :home ? 'current' : '')}"  href='index.html'
+        | NAME
+      .nav-collapse.collapse
+        ul.nav
+          li class="#{(@current == :about ? 'current' : '')}" 
+            a href='about.html' About
+          li class="#{(@current == :help ? 'current' : '')}" 
+            a href='help.html' Help

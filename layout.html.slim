@@ -1,0 +1,68 @@
+doctype html
+html lang="en"
+	head
+		meta charset="utf-8"
+		title NAME
+		/uncomment the following line if you need your site to be responsive
+		/meta name="viewport" content="width=device-width, initial-scale=1.0"
+		meta name="description" content=""
+		
+		/ Le styles
+		
+		/regular CSS
+		link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" 
+
+		/responsive version (don't use both)
+		/link href="css/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" 
+		
+		|
+			<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+			<!--[if lt IE 9]>
+				<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+			
+		/ Le Custom styles
+		link href="css/sticky_footer.css" type="text/css" rel="stylesheet" 
+		link href="css/custom-styles.css" type="text/css" rel="stylesheet" 
+		
+		/ Le fav and touch icons
+		/ Uncomment if you want to use these
+	  	link rel="apple-touch-icon" href="images/apple-touch-icon.png"
+  		link rel="shortcut icon" href="images/favicon.ico"
+  		link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png"
+  		link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"
+  		
+	body
+	  #wrap
+	    == render '_navbar.html.slim'
+	    .container 
+	      == yield
+  		#push
+  	#footer
+  		.container
+  			p
+  			  ' &copy; NAME
+
+	/ Placed at the end of the document so the pages load faster		
+	script type="text/javascript" src="js/jquery.js"
+	-if(@current == :contact)
+		script type="text/javascript" src="js/jquery.validate.min.js"
+			script type="text/javascript" src="js/jquery-ujs.js"
+		javascript:
+			$("form").validate();					
+	script type="text/javascript" src="js/bootstrap.min.js"
+	script type="text/javascript" src="js/bootstrap-collapse.js"
+	-if(@current == :music)
+		script type="text/javascript" src="js/audiojs/audio.min.js"
+		script type="text/javascript" src="js/music_custom.js"
+	/ google analytics
+	javascript:
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-37316916-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
