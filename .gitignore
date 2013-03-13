@@ -2,3 +2,4 @@
 .DS_Store
 *.gem
 public/*
+css/.sass-cache/*
